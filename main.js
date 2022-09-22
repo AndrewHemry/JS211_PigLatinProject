@@ -13,8 +13,25 @@ const rl = readline.createInterface({
 
 const pigLatin = (word) => {
 
-  // Your code here
+  let mainArray = word.toLowerCase().trim().split('')
+  let ayString = 'ay'
+  let counter = 0;
 
+  while (counter < mainArray.length){
+    if (mainArray[0] !== 'a' && mainArray[0] !== 'e' && mainArray[0] !== 'i' && mainArray[0] !== 'o' && mainArray[0] !== 'u'){
+      mainArray.push(mainArray[0])
+      mainArray.shift();
+      counter++
+    } else if (counter == 0){
+      ayString = 'yay'
+      break
+    } else {
+      break
+    }
+  }
+  
+  let pigLatinResults = mainArray.join("").concat(ayString)
+  console.log('Final Results',pigLatinResults)
 }
 
 // the first function called in the program to get an input from the user
